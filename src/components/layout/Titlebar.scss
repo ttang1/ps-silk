@@ -1,0 +1,81 @@
+.titlebar {
+    background-color: #043550;
+    color: #c9c9c9;
+    width: 100%;
+    height: 30px;
+    display: flex;
+}
+
+.titlebar-drag {
+    -webkit-app-region: drag;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+.window-title {
+    -webkit-app-region: drag;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-left: 120px;
+}
+
+.window-controls {
+    -webkit-app-region: no-drag;
+    height: 100%;
+    width: 120px;
+    text-align: center;
+    margin-left: auto;
+    display: flex;
+}
+
+.window-icon {
+    display: inline-block;
+    height: 100%;
+    width: 40px;
+    padding: 0;
+}
+
+.window-icon:hover {
+    background-color: hsla(0,0%,100%,.1);
+}
+
+#close-window.window-icon:hover {
+    background-color: #bb0000;
+}
+
+#close-window.window-icon:hover .icon {
+    background-color: #fff;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    margin: 0;
+}
+
+.icon-min {
+    -webkit-mask: url("../../assets/SilkMinimize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-max {
+    -webkit-mask: url("../../assets/SilkMaximize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-unmax {
+    -webkit-mask: url("../../assets/SilkUnmaximize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-close {
+    -webkit-mask: url("../../assets/SilkClose.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
