@@ -11,7 +11,7 @@ let createLoadAppWindow = () => {
         height: 160,
         show: true,
         frame: false,
-        icon: 'src/assets/ps_logo.ico'
+        icon: 'src/assets/psLogo.ico'
     })
 
     loadWin.loadURL(url.format({
@@ -26,7 +26,7 @@ let createLoadAppWindow = () => {
 }
 
 let createWindow = () => {
-    // createLoadAppWindow()
+    createLoadAppWindow()
 
     win = new BrowserWindow({
         width:  1080,
@@ -38,7 +38,7 @@ let createWindow = () => {
         webPreferences: {
             nodeIntegration: true
         },
-        icon: 'src/assets/ps_logo.ico'
+        icon: 'src/assets/psLogo.ico'
     })
     
     win.loadURL(url.format({
@@ -51,15 +51,15 @@ let createWindow = () => {
 
         // let load screen stay on for 3 seconds
         // setTimeout(() => {
-        //     loadWin.close()
-        //     win.show()
+            loadWin.close()
+            win.show()
         // }, 3000);
-        win.show()
+        // win.show()
     })
 }
 
-
 app.once('ready', createWindow)
+// app.once('ready', createLoadAppWindow)
 
 
 // macOS
