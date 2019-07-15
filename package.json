@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jquery": "^3.3.30",
+    "@types/jqueryui": "^1.12.7",
     "@types/node": "^12.0.12",
     "@types/node-sass": "^4.11.0",
     "@types/react": "^16.8.22",
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

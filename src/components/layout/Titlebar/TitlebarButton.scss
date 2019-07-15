@@ -1,0 +1,45 @@
+.titlebar-button {
+    display: inline-block;
+    height: 100%;
+    width: 40px;
+    padding: 0;
+}
+
+.titlebar-button:hover {
+    background-color: hsla(0,0%,100%,.1);
+}
+
+#close-window.titlebar-button:hover {
+    background-color: #bb0000;
+}
+
+#close-window.titlebar-button:hover .icon {
+    background-color: #fff;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    margin: 0;
+}
+
+.icon-min {
+    -webkit-mask: url("../../../assets/SilkMinimize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-max {
+    -webkit-mask: url("../../../assets/SilkMaximize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-unmax {
+    -webkit-mask: url("../../../assets/SilkUnmaximize.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}
+
+.icon-close {
+    -webkit-mask: url("../../../assets/SilkClose.svg") no-repeat 50% 50%;
+    -webkit-mask-size: 12px;
+}

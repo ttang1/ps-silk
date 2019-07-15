@@ -1,13 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Titlebar } from "./components/layout/Titlebar"
+import { Titlebar } from "./components/layout/Titlebar/Titlebar"
+import { Sidebar } from "./components/layout/Sidebar/Sidebar"
 import "./index.scss"
 
 class App extends React.Component<{},{}> {
     render() {
         return ([
-            <Titlebar title="silk" />
+            <Titlebar label="silk" />,
+            <Sidebar/>
         ]);
     }
 }

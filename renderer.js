@@ -11,7 +11,7 @@ let $ = require('jquery');
             init();
         }
     }
-
+    
     function init() {   
         let win = remote.getCurrentWindow();
         
