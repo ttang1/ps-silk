@@ -1,0 +1,38 @@
+// theme 1
+$c1: #385A7F;
+$c1-lt: #3C5E83;
+$c1-dk: #043550;
+
+// $titlebar-bg: #2f2f2f;
+$titlebar-bg: #1b2435;
+$titlebar-text: #c9c9c9;
+$titlebar-button: #c9c9c9;
+$titlebar-height: 2rem;
+
+$statusbar-bg: #2e384c;
+$statusbar-height: 1.5rem;
+$statusbar-text: #c9c9c9;
+
+// $navbar-bg: $c1;
+$navbar-bg: #2e384c;
+$navbar-text: #c9c9c9;
+$navbar-top: $titlebar-height;
+$navbar-height: 3rem;
+
+$sidebar-bg: #e8e9ed;
+$sidebar-width: 13rem;
+$sidebar-top: $titlebar-height + $navbar-height;
+$sidebar-bottom: $statusbar-height;
+
+// $minibar-bg: #2f2f2f;
+// $minibar-bg: #47536b;
+$minibar-bg: #404a5d;
+$minibar-width: 3rem;
+$minibar-top: $titlebar-height + $navbar-height;
+// $minibar-top: $titlebar-height;
+$minibar-bottom: $statusbar-height;
+
+$detailsbar-bg: #c2c6ce;
+$detailsbar-width: 22rem;
+$detailsbar-top: $titlebar-height + $navbar-height;
+$detailsbar-bottom: $statusbar-height;

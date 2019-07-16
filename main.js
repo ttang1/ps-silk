@@ -29,11 +29,11 @@ let createWindow = () => {
     createLoadAppWindow()
 
     win = new BrowserWindow({
-        width:  1080,
-        height: 760,
+        width:  1200,
+        height: 800,
         show: false,
         frame: false,
-        minWidth: 800,
+        minWidth: 900,
         minHeight: 600,
         webPreferences: {
             nodeIntegration: true

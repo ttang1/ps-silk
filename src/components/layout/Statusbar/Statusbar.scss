@@ -1,0 +1,11 @@
+@import "../theme";
+
+.statusbar {
+    background-color: $statusbar-bg;
+    color: $statusbar-text;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: $statusbar-height;
+    display: flex;
+}

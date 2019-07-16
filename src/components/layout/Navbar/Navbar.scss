@@ -1,0 +1,11 @@
+@import "../theme";
+
+.navbar {
+    background-color: $navbar-bg;
+    color: $navbar-text;
+    width: 100%;
+    top: $navbar-top;
+    left: 0;
+    height: $navbar-height;
+    display: flex;
+}

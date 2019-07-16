@@ -1,8 +1,12 @@
+@import "../theme";
+
 .titlebar {
-    background-color: #043550;
-    color: #c9c9c9;
+    background-color: $titlebar-bg;
+    color: $titlebar-text;
     width: 100%;
-    height: 30px;
+    top:0;
+    left: 0;
+    height: $titlebar-height;
     display: flex;
 }
 

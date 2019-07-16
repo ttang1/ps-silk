@@ -1,10 +1,6 @@
 const remote = require('electron').remote;
 let $ = require('jquery');
 
-
-
-
-// Window button functionality
 (() => {
     document.onreadystatechange = () => {
         if (document.readyState == "complete") {
