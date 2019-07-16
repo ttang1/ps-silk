@@ -32,7 +32,7 @@ $minibar-top: $titlebar-height + $navbar-height;
 // $minibar-top: $titlebar-height;
 $minibar-bottom: $statusbar-height;
 
-$detailsbar-bg: #c2c6ce;
-$detailsbar-width: 22rem;
-$detailsbar-top: $titlebar-height + $navbar-height;
-$detailsbar-bottom: $statusbar-height;
+$detailscolumn-bg: #c2c6ce;
+$detailscolumn-width: 22rem;
+$detailscolumn-top: $titlebar-height + $navbar-height;
+$detailscolumn-bottom: $statusbar-height;

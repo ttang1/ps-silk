@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
+import "bootstrap"
 import "./index.scss"
 import { Titlebar } from "./components/layout/Titlebar/Titlebar";
 import { Sidebar } from "./components/layout/Sidebar/Sidebar";
 import { Minibar } from "./components/layout/Minibar/Minibar";
-import { Detailsbar } from "./components/layout/Detailsbar/Detailsbar";
+import { Detailscolumn } from "./components/layout/Detailscolumn/Detailscolumn";
 import { Navbar } from "./components/layout/Navbar/Navbar";
 import { Statusbar } from "./components/layout/Statusbar/Statusbar";
 
@@ -13,7 +13,7 @@ class App extends React.Component<{},{}> {
     render() {
         return ([
             <Sidebar/>,
-            <Detailsbar/>,
+            <Detailscolumn/>,
             <Minibar/>,
             <Navbar/>,
             <Statusbar/>,

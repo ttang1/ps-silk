@@ -1,0 +1,10 @@
+@import "../theme";
+
+.detailscolumn {
+    position: absolute;
+    height: 100%;
+    width: $detailscolumn-width;
+    top: $detailscolumn-top;
+    right: 0;
+    background-color: $detailscolumn-bg;
+}
