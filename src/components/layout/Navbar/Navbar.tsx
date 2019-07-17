@@ -1,5 +1,7 @@
 import * as React from "react";
 import "./Navbar.scss";
+import { ipcRenderer } from "electron";
+
 
 
 export class Navbar extends React.Component<{}, {}> {
@@ -7,8 +9,17 @@ export class Navbar extends React.Component<{}, {}> {
         e.preventDefault();
 
         let file: File = document.querySelector('input').files[0];
+        const { path } = document.querySelector('input').files[0];
+        
 
-        console.log(file.name);
+        console.log(file);
+
+        ipcRenderer.send("json:submit", path);
+
+        ipcRenderer.on("json:receive", (event: any, fn: string, ln: string) => {
+            document.querySelector(".titlebar-label").innerHTML = `${fn} ${ln}`;
+        });
+
     }
 
 
@@ -22,6 +33,8 @@ export class Navbar extends React.Component<{}, {}> {
                         <input type="file" accept=".json" />
                         <button type="submit">Add</button>
                     </form>
+
+                    <h1 id="result"></h1>
                 </div>
                 <div className="navbar-user-profile"> </div>
             </div>
