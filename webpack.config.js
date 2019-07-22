@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     target: "electron-renderer",
     mode: "production", 
@@ -10,11 +12,19 @@ module.exports = {
             ".jsx"
         ]
     },
+    entry: {
+        app: "./src/index.tsx",
+        login: "./src/login.tsx"
+    },
 
+    output: {
+        filename: "[name].js",
+        path: path.resolve(__dirname, "dist")
+    },
     module: {
         rules: [
             {
-                test: /\.ts(x?)$/,
+                test: /\.tsx?$/,
                 exclude: [
                     /node_modules/
                 ],

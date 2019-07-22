@@ -1,9 +1,27 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 let fs = require('fs');
 let loadWin;
 let win;
+
+const menuTemplate = [
+    {
+        label: 'File',
+        submenu: [
+            { 
+                label: "New" 
+            },
+            { 
+                label: "Open" 
+            },
+            {
+                label: "Save"
+            }
+        ]
+    }
+];
+
 
 let createLoadAppWindow = () => {
     loadWin = new BrowserWindow({
@@ -47,6 +65,10 @@ let createWindow = () => {
         slashes: true
     }));
 
+// Menu
+    // const mainMenu = Menu.buildFromTemplate(menuTemplate);
+    // Menu.setApplicationMenu(mainMenu);
+
     win.once('ready-to-show', () => {
 
         // let load screen stay on for 3 seconds
@@ -56,6 +78,7 @@ let createWindow = () => {
         // }, 3000);
         // win.show()
     });
+    return win;
 }
 
 app.once('ready', createWindow);
@@ -72,10 +95,13 @@ app.on('window-all-closed', () => {
 // macOS
 app.on('activate', () => {
     if (win === null) {
-        createWindow();
+        win = createWindow();
     }
 });
 
+
+
+// works with Navbar.tsx
 ipcMain.on("json:submit",(event, data) => {
     // console.log(path);
     let raw = fs.readFileSync(data);
