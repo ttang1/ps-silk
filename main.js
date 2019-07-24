@@ -72,10 +72,10 @@ let createWindow = () => {
     win.once('ready-to-show', () => {
 
         // let load screen stay on for 3 seconds
-        // setTimeout(() => {
+        setTimeout(() => {
             loadWin.close();
             win.show();
-        // }, 3000);
+        }, 3000);
         // win.show()
     });
     return win;
