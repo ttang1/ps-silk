@@ -3,6 +3,7 @@ const path = require('path');
 const url = require('url');
 let fs = require('fs');
 let loadWin;
+let loginWin;
 let win;
 
 const menuTemplate = [
@@ -22,12 +23,19 @@ const menuTemplate = [
     }
 ];
 
+let silkConfig = {
+    isSet: false,
+    firstName: null,
+    lastName: null,
+    email: null
+};
+
 
 let createLoadAppWindow = () => {
     loadWin = new BrowserWindow({
         width: 320,
         height: 160,
-        show: true,
+        show: false,
         frame: false,
         icon: 'src/assets/psLogo.ico'
     });
@@ -40,6 +48,29 @@ let createLoadAppWindow = () => {
 
     loadWin.once('ready-to-show', () => {
         loadWin.show();
+    });
+}
+
+let createLoginWindow = () => {
+    loginWin = new BrowserWindow({
+        width: 800,
+        height: 500,
+        show: false,
+        frame: false, 
+        webPreferences: {
+            nodeIntegration: true
+        },
+        icon: 'src/assets/psLogo.ico'
+    });
+
+    loginWin.loadURL(url.format({
+        pathname: path.join(__dirname, 'login.html'),
+        protocol: 'file',
+        slashes: true
+    }));
+
+    loginWin.once('ready-to-show', () => {
+        loginWin.show();
     });
 }
 
@@ -81,8 +112,22 @@ let createWindow = () => {
     return win;
 }
 
-app.once('ready', createWindow);
+// app.once('ready', createWindow);
 // app.once('ready', createLoadAppWindow)
+app.once('ready', ()=>{
+    (() => {
+        console.log(__dirname);
+        let configRaw = fs.readFileSync(__dirname +  "\\silk.config.json");
+        console.log(configRaw);
+    })();
+    if (!silkConfig.isSet) {
+        createLoginWindow();
+    } else {
+        createWindow();
+    }
+});
+
+
 
 
 // macOS

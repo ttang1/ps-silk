@@ -44,14 +44,7 @@ import { Titlebar } from "./components/layout/Titlebar/Titlebar";
     }
 })();
 
-
-
-
-
-
-
-
-class App extends React.Component<{}, {}> {
+class Login extends React.Component<{}, {}> {
     render() {
         return ([
             <Titlebar label="silk | login" />
@@ -59,4 +52,4 @@ class App extends React.Component<{}, {}> {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById("silk-login"));
+ReactDOM.render(<Login />, document.getElementById("silk-login"));
