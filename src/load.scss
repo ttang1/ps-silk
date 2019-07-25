@@ -1,0 +1,28 @@
+/* html { height: 100%; -webkit-app-region: drag; background-image: linear-gradient(to bottom, #385A7F, #3C5E83); }  */
+html { 
+    height: 100%; 
+    -webkit-app-region: drag; 
+    background-image: linear-gradient(to bottom, #2e384c, #404a5d); 
+}
+/* body { width: 100%; height: 100%; margin: 0; background-image: linear-gradient(to bottom, #385A7F, #3C5E83); } */
+body { 
+    width: 100%; 
+    height: 100%; 
+    margin: 0; 
+    background-image: linear-gradient(to bottom, #2e384c, #404a5d); 
+}
+#silk-load {
+    width: 100%; 
+    height: 100%; 
+}
+.ps-icon { 
+    width: 100%; 
+    height: 100%; 
+    background-color: #ddd; 
+    -webkit-mask: url("./assets/PriceSpider.svg") no-repeat 50% 50%; 
+    -webkit-mask-size: 250px; 
+}
+.icon-container { 
+    width: 100%; 
+    height: 100%; 
+}

@@ -10,15 +10,9 @@ const menuTemplate = [
     {
         label: 'File',
         submenu: [
-            { 
-                label: "New" 
-            },
-            { 
-                label: "Open" 
-            },
-            {
-                label: "Save"
-            }
+            { label: "New" },
+            { label: "Open" },
+            { label: "Save" }
         ]
     }
 ];
@@ -41,7 +35,7 @@ let createLoadAppWindow = () => {
     });
 
     loadWin.loadURL(url.format({
-        pathname: path.join(__dirname, 'loadapp.html'),
+        pathname: path.join(__dirname, 'load.html'),
         protocol: 'file:',
         slashes: true
     }));
@@ -54,9 +48,10 @@ let createLoadAppWindow = () => {
 let createLoginWindow = () => {
     loginWin = new BrowserWindow({
         width: 800,
-        height: 500,
+        height: 460,
         show: false,
         frame: false, 
+        resizable: false,
         webPreferences: {
             nodeIntegration: true
         },
@@ -96,7 +91,7 @@ let createWindow = () => {
         slashes: true
     }));
 
-// Menu
+    // Menu
     // const mainMenu = Menu.buildFromTemplate(menuTemplate);
     // Menu.setApplicationMenu(mainMenu);
 
@@ -116,19 +111,16 @@ let createWindow = () => {
 // app.once('ready', createLoadAppWindow)
 app.once('ready', ()=>{
     (() => {
-        console.log(__dirname);
-        let configRaw = fs.readFileSync(__dirname +  "\\silk.config.json");
+        let configRaw = fs.readFileSync(__dirname + "\\silk.config.json");
         console.log(configRaw);
     })();
     if (!silkConfig.isSet) {
         createLoginWindow();
     } else {
+        // createLoadAppWindow();
         createWindow();
     }
 });
-
-
-
 
 // macOS
 app.on('window-all-closed', () => {

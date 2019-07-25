@@ -14,7 +14,8 @@ module.exports = {
     },
     entry: {
         app: "./src/index.tsx",
-        login: "./src/login.tsx"
+        login: "./src/login.tsx",
+        load: "./src/load.tsx"
     },
 
     output: {
