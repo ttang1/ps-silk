@@ -6,6 +6,7 @@ import * as ReactDOM from "react-dom";
 import "bootstrap"
 import "./login.scss"
 import { DetailsPanel } from "./components/layout/Login/DetailsPanel";
+import { FormPanel } from "./components/layout/Login/FormPanel";
 
 // Renderer
 (() => {
@@ -27,7 +28,8 @@ import { DetailsPanel } from "./components/layout/Login/DetailsPanel";
 class Login extends React.Component<{}, {}> {
     render() {
         return ([
-            <DetailsPanel/>
+            <DetailsPanel/>,
+            <FormPanel/>
         ]);
     }
 }

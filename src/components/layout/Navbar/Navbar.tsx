@@ -2,8 +2,6 @@ import * as React from "react";
 import "./Navbar.scss";
 import { ipcRenderer } from "electron";
 
-
-
 export class Navbar extends React.Component<{}, {}> {
     private handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
@@ -19,7 +17,11 @@ export class Navbar extends React.Component<{}, {}> {
         ipcRenderer.on("json:receive", (event: any, fn: string, ln: string) => {
             document.querySelector(".titlebar-label").innerHTML = `${fn} ${ln}`;
         });
+    }
 
+    private handleReset = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+        e.preventDefault();
+        ipcRenderer.send("reset:userPref");
     }
 
 
@@ -36,7 +38,13 @@ export class Navbar extends React.Component<{}, {}> {
 
                     <h1 id="result"></h1>
                 </div>
-                <div className="navbar-user-profile"> </div>
+                <div className="navbar-user-profile"> 
+                    <form onSubmit={this.handleReset}>
+                        <button type="submit">Reset</button>
+                    </form>
+                    <span id="userEmail"></span>
+                    <span id="userAccess"></span>
+                </div>
             </div>
         );
     }

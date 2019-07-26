@@ -19,8 +19,6 @@ const menuTemplate = [
 
 let silkConfig = {
     isSet: false,
-    firstName: null,
-    lastName: null,
     email: null
 };
 
@@ -43,12 +41,13 @@ let createLoadAppWindow = () => {
     loadWin.once('ready-to-show', () => {
         loadWin.show();
     });
+    return loadWin;
 }
 
 let createLoginWindow = () => {
     loginWin = new BrowserWindow({
-        width: 800,
-        height: 460,
+        width: 800, // 50rem
+        height: 480, // 30rem
         show: false,
         frame: false, 
         resizable: false,
@@ -67,6 +66,7 @@ let createLoginWindow = () => {
     loginWin.once('ready-to-show', () => {
         loginWin.show();
     });
+    return loginWin;
 }
 
 let createWindow = () => {
@@ -109,17 +109,24 @@ let createWindow = () => {
 
 // app.once('ready', createWindow);
 // app.once('ready', createLoadAppWindow)
-app.once('ready', ()=>{
+app.once('ready', () => {
     (() => {
-        let configRaw = fs.readFileSync(__dirname + "\\silk.config.json");
-        console.log(configRaw);
+        let configFile = app.getAppPath() + "/silk.config.json";
+        fs.access(configFile, err => {
+            if (!err) {
+                let filebuffer = fs.readFileSync(configFile);
+                let userPref = JSON.parse(filebuffer);
+                win = createWindow();
+                win.once("show", () => {
+                    win.webContents.send("init:userPref", userPref.email, userPref.accessPermissions);
+                })
+                
+                console.log("HIII");
+            } else {
+                createLoginWindow();
+            }
+        });
     })();
-    if (!silkConfig.isSet) {
-        createLoginWindow();
-    } else {
-        // createLoadAppWindow();
-        createWindow();
-    }
 });
 
 // macOS
@@ -139,10 +146,16 @@ app.on('activate', () => {
 
 
 // works with Navbar.tsx
-ipcMain.on("json:submit",(event, data) => {
+ipcMain.on("json:submit", (event, data) => {
     // console.log(path);
     let raw = fs.readFileSync(data);
     let user = JSON.parse(raw);
     
     win.webContents.send("json:receive", user.firstName, user.lastName);
 });
+
+
+ipcMain.on("reset:userPref", (e,d) => {
+    loginWin = createLoginWindow();
+    win.close();
+})

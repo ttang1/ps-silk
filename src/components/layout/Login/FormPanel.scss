@@ -1,0 +1,17 @@
+@import "../theme";
+
+.detailspanel {
+    height: 100%;
+    width: $formpanel-width;
+    top: 0;
+    right: 0;
+    background-color: $formpanel-bg;
+    color: $formpanel-text; //#6f7b91
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.detailspanel-content {
+    width: 100%;
+}

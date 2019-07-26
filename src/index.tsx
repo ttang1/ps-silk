@@ -11,11 +11,14 @@ import { Minibar } from "./components/layout/Minibar/Minibar";
 import { Detailscolumn } from "./components/layout/Detailscolumn/Detailscolumn";
 import { Navbar } from "./components/layout/Navbar/Navbar";
 import { Statusbar } from "./components/layout/Statusbar/Statusbar";
+import { ipcRenderer } from "electron";
 
 // Renderer
-(() =>{
+(() => {
+    
     document.onreadystatechange = () => {
         let init = () => {
+            
             let win: BrowserWindow = remote.getCurrentWindow();
             
             let togMax = () => {
@@ -47,10 +50,14 @@ import { Statusbar } from "./components/layout/Statusbar/Statusbar";
 
         if (document.readyState == "complete") { init(); }
     }
+    console.log("YAYAY")
 })();
 
-
-
+ipcRenderer.on("init:userPref", (event: any, email: string, accessPermissions: number) => {
+    document.querySelector("#userEmail").innerHTML = `${email}`;
+    document.querySelector("#userAccess").innerHTML = `${accessPermissions}`;
+    console.log("HELLO");
+});
 
 
 
