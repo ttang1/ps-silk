@@ -9,7 +9,7 @@ export interface IconButtonProps {
 export class IconButton extends React.Component<IconButtonProps, {}> {
     render() {
         return (
-            <div className="icon-button" id={this.props.id}>
+            <div className="login-icon-button" id={this.props.id}>
                 <div className={this.props.iconClass} />
             </div>
         );

@@ -7,6 +7,7 @@ import "bootstrap"
 import "./login.scss"
 import { DetailsPanel } from "./components/layout/Login/DetailsPanel";
 import { FormPanel } from "./components/layout/Login/FormPanel";
+import { IconButton } from "./components/layout/Login/IconButton";
 
 // Renderer
 (() => {
@@ -18,7 +19,7 @@ import { FormPanel } from "./components/layout/Login/FormPanel";
 
             closeBtn.addEventListener("click", e => {
                 win = remote.getCurrentWindow(); win.close();
-            })
+            });
         }
 
         if (document.readyState == "complete") { init(); }
@@ -29,7 +30,8 @@ class Login extends React.Component<{}, {}> {
     render() {
         return ([
             <DetailsPanel/>,
-            <FormPanel/>
+            <FormPanel/>,
+            <IconButton id="close-window" iconClass="icon icon-close"/>
         ]);
     }
 }

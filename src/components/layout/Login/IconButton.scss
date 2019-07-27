@@ -1,10 +1,15 @@
 @import "../theme";
 
 .login-icon-button {
-    display: inline-block;
+    display: block;
     height: 2rem;
     width: 40px;
     padding: 0;
+    float: right;
+}
+
+#close-window.login-icon-button:hover .icon {
+    background-color: $login-icon-hover-button;
 }
 
 .icon {

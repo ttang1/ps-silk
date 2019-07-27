@@ -123,7 +123,7 @@ app.once('ready', () => {
                 
                 console.log("HIII");
             } else {
-                createLoginWindow();
+                createLoginWindow();    
             }
         });
     })();

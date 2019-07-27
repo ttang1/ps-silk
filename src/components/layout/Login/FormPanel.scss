@@ -1,6 +1,6 @@
 @import "../theme";
 
-.detailspanel {
+.formpanel {
     height: 100%;
     width: $formpanel-width;
     top: 0;
@@ -12,6 +12,14 @@
     display: flex;
 }
 
-.detailspanel-content {
+.formpanel-content {
+    height: 100%;
     width: 100%;
+}
+
+input {
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid #a7a7a7;
 }
