@@ -6,8 +6,16 @@ export class FormPanel extends React.Component<{}, {}> {
         return (
             <div className="part formpanel">
                 <form className="formpanel-content">
-                    <input type="text" placeholder="name"></input>
-                    <input type="text" placeholder="email"></input>
+                    <div className="form-group">
+                        <div className="input-group mb-3">
+                            <input type="email" className="form-control" placeholder="Email" aria-label="Email"/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <div className="input-group mb-3">
+                            <button type="submit" className="btn btn-dark">Register</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         );
