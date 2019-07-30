@@ -4,18 +4,20 @@ $c1: #385A7F;
 $c1-lt: #3C5E83;
 $c1-dk: #043550;
 
+$silk-base-color: #2e384c;
+
 // $titlebar-bg: #2f2f2f;
 $titlebar-bg: #1b2435;
 $titlebar-text: #c9c9c9;
 $titlebar-button: #c9c9c9;
 $titlebar-height: 2rem;
 
-$statusbar-bg: #2e384c;
+$statusbar-bg: $silk-base-color;
 $statusbar-height: 1.5rem;
 $statusbar-text: #c9c9c9;
 
 // $navbar-bg: $c1;
-$navbar-bg: #2e384c;
+$navbar-bg: $silk-base-color;
 $navbar-text: #c9c9c9;
 $navbar-top: $titlebar-height;
 $navbar-height: 3rem;
@@ -42,7 +44,7 @@ $detailscolumn-bottom: $statusbar-height;
 // Login / Register page
 $detailspanel-width: 40%;   
 $detailspanel-text: #fff;
-$detailspanel-bg: #2e384c;
+$detailspanel-bg: $silk-base-color;
 
 $formpanel-width: 60%;
 $formpanel-text: #6f7b91;
@@ -50,3 +52,18 @@ $formpanel-bg: #fff;
 
 $login-icon-button: #1b2435;
 $login-icon-hover-button: #6f7b91;
+
+.btn-dark.focus {
+    box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
+}
+
+.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active, .show > .btn-dark.dropdown-toggle {
+    color: #fff;
+    background-color: #1d2124;
+    border-color: #171a1d;
+}
+.btn-dark:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+}

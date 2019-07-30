@@ -1,6 +1,11 @@
 import * as React from "react";
 import "./FormPanel.scss";
 
+export interface FormProps {
+    placeholder?: string;
+}
+
+
 export class FormPanel extends React.Component<{}, {}> {
     render() {
         return (
