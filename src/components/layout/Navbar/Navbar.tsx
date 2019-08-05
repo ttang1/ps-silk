@@ -8,7 +8,6 @@ export class Navbar extends React.Component<{}, {}> {
 
         let file: File = document.querySelector('input').files[0];
         const { path } = document.querySelector('input').files[0];
-        
 
         console.log(file);
 
@@ -23,7 +22,6 @@ export class Navbar extends React.Component<{}, {}> {
         e.preventDefault();
         ipcRenderer.send("reset:userPref");
     }
-
 
     render() {
         return (

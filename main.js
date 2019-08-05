@@ -155,7 +155,12 @@ ipcMain.on("json:submit", (event, data) => {
 });
 
 
-ipcMain.on("reset:userPref", (e,d) => {
+ipcMain.on("reset:userPref", (e, d) => {
     loginWin = createLoginWindow();
     win.close();
-})
+});
+
+ipcMain.on("register:email", (e, d) => {
+    loginWin.close();
+    win.createWindow();
+});
