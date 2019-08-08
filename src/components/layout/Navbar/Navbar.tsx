@@ -20,7 +20,8 @@ export class Navbar extends React.Component<{}, {}> {
 
     private handleReset = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
-        ipcRenderer.send("reset:userPref");
+        console.log("User Pref");
+        ipcRenderer.send("reset:UserPref");
     }
 
     render() {

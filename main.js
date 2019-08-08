@@ -109,24 +109,22 @@ let createWindow = () => {
 
 // app.once('ready', createWindow);
 // app.once('ready', createLoadAppWindow)
+let configFile = app.getAppPath() + "\\silk.config.json";
+console.log(configFile);
 app.once('ready', () => {
-    (() => {
-        let configFile = app.getAppPath() + "/silk.config.json";
-        fs.access(configFile, err => {
-            if (!err) {
-                let filebuffer = fs.readFileSync(configFile);
-                let userPref = JSON.parse(filebuffer);
-                win = createWindow();
-                win.once("show", () => {
-                    win.webContents.send("init:userPref", userPref.email, userPref.accessPermissions);
-                })
-                
-                console.log("HIII");
-            } else {
-                createLoginWindow();    
-            }
-        });
-    })();
+    fs.access(configFile, err => {
+        if (!err) {
+            let filebuffer = fs.readFileSync(configFile);
+            let userPref = JSON.parse(filebuffer);
+            win = createWindow();
+          
+            win.once("show", () => {
+                win.webContents.send("init:userPref", userPref.email, userPref.accessPermissions);
+            })
+        } else {
+            createLoginWindow();    
+        }
+    });
 });
 
 // macOS
@@ -147,7 +145,6 @@ app.on('activate', () => {
 
 // works with Navbar.tsx
 ipcMain.on("json:submit", (event, data) => {
-    // console.log(path);
     let raw = fs.readFileSync(data);
     let user = JSON.parse(raw);
     
@@ -155,12 +152,28 @@ ipcMain.on("json:submit", (event, data) => {
 });
 
 
-ipcMain.on("reset:userPref", (e, d) => {
+ipcMain.on("reset:UserPref", (e, d) => {
     loginWin = createLoginWindow();
     win.close();
 });
 
-ipcMain.on("register:email", (e, d) => {
+
+
+
+ipcMain.on("register:Email", (e, d) => {
+    console.log("gets heres");
     loginWin.close();
-    win.createWindow();
+    fs.access(configFile, err => {
+        if (!err) {
+            let filebuffer = fs.readFileSync(configFile);
+            let userPref = JSON.parse(filebuffer);
+            win = createWindow();
+
+            win.once("show", () => {
+                win.webContents.send("init:userPref", userPref.email, userPref.accessPermissions);
+            })
+        } else {
+
+        }
+    });
 });

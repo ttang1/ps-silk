@@ -5,6 +5,7 @@ $c1-lt: #3C5E83;
 $c1-dk: #043550;
 
 $silk-base-color: #2e384c;
+$silk-light-color: #404a5d;
 
 // $titlebar-bg: #2f2f2f;
 $titlebar-bg: #1b2435;
@@ -53,17 +54,23 @@ $formpanel-bg: #fff;
 $login-icon-button: #1b2435;
 $login-icon-hover-button: #6f7b91;
 
-.btn-dark.focus {
-    box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
+.btn-silk {
+    color: #fff;
+    background-color: $silk-base-color;
+    border-color: $silk-base-color;
 }
 
-.btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active, .show > .btn-dark.dropdown-toggle {
-    color: #fff;
-    background-color: #1d2124;
-    border-color: #171a1d;
+.btn-silk.focus {
+    box-shadow: 0 0 0 0.2rem rgba(63, 84, 102, 0.5);
 }
-.btn-dark:hover {
+
+.btn-silk:not(:disabled):not(.disabled):active, .btn-silk:not(:disabled):not(.disabled).active, .show > .btn-silk.dropdown-toggle {
     color: #fff;
-    background-color: #23272b;
-    border-color: #1d2124;
+    background-color: $silk-base-color;
+    border-color: $silk-base-color;
+}
+.btn-silk:hover {
+    color: #fff;
+    background-color: $silk-light-color;
+    border-color: $silk-light-color;
 }

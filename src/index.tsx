@@ -53,10 +53,10 @@ import { ipcRenderer } from "electron";
     console.log("YAYAY")
 })();
 
-ipcRenderer.on("init:userPref", (event: any, email: string, accessPermissions: number) => {
+ipcRenderer.on("init:UserPref", (event: any, email: string, accessPermissions: string) => {
     document.querySelector("#userEmail").innerHTML = `${email}`;
     document.querySelector("#userAccess").innerHTML = `${accessPermissions}`;
-    console.log("HELLO");
+    console.log("User Pref Updated");
 });
 
 
