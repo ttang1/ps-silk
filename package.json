@@ -42,7 +42,7 @@
     "jquery": "^3.4.1",
     "jquery-ui": "^1.12.1",
     "popper.js": "^1.15.0",
-    "postcss": "^7.0.17",
+    "postcss": "^7.0.36",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
